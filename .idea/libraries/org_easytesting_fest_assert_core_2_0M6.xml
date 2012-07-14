@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.easytesting_fest-assert-core_2.0M6">
+    <CLASSES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-assert-core/jars/fest-assert-core-2.0M6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-assert-core/docs/fest-assert-core-2.0M6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-assert-core/srcs/fest-assert-core-2.0M6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

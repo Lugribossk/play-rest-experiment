@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.easytesting_fest-util_1.2.1">
+    <CLASSES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-util/jars/fest-util-1.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-util/docs/fest-util-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.easytesting/fest-util/srcs/fest-util-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

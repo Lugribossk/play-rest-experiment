@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.jooq_joor_0.9.3">
+    <CLASSES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.jooq/joor/jars/joor-0.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.jooq/joor/docs/joor-0.9.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://C:/Play/play-2.0.2/repository/cache/org.jooq/joor/srcs/joor-0.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
