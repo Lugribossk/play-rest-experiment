@@ -11,11 +11,10 @@ import play.mvc.Http;
 import play.mvc.Result;
 import util.EbeanInMemoryTest;
 
-import java.util.List;
 import java.util.Map;
 
-import static util.fest.PlayAssertions.*;
 import static play.test.Helpers.*;
+import static util.fest.PlayAssertions.assertThat;
 
 /**
  * Tests for {@link PersonController}.
@@ -104,16 +103,13 @@ public class PersonControllerInMemTest extends EbeanInMemoryTest {
         input.put("name", "test");
 
         Result result = routeAndCall(fakeRequest("POST", "/api/persons").withJsonBody(input));
-        List<Person> persons = Person.find.all();
+        int id = Json.parse(contentAsString(result)).get("id").asInt();
+        Person p = Person.find.byId(id);
 
         assertThat(result).hasStatus(Http.Status.OK);
-        assertThat(persons).hasSize(1);
-        assertThat(persons.get(0).getName()).isEqualTo("test");
-
-//        int id = Json.parse(contentAsString(result)).get("id").asInt();
-//        Person p = Person.find.byId(id);
-//        assertThat(p).isNotNull();
-//        assertThat(p.getName()).isEqualTo("test");
+        assertThat(Person.find.all()).hasSize(1);
+        assertThat(p).isNotNull();
+        assertThat(p.getName()).isEqualTo("test");
     }
 
     @Test
@@ -156,7 +152,7 @@ public class PersonControllerInMemTest extends EbeanInMemoryTest {
         ObjectNode input = Json.newObject();
         input.put("name", "test2");
 
-        Result result = routeAndCall(fakeRequest("PUT", "/api/persons/" + p.getId()).withJsonBody(input, "PUT"));
+        Result result = routeAndCall(fakeRequest(null, "/api/persons/" + p.getId()).withJsonBody(input, "PUT"));
         p.refresh();
 
         assertThat(result).hasStatus(Http.Status.OK)
@@ -174,10 +170,11 @@ public class PersonControllerInMemTest extends EbeanInMemoryTest {
         input.put("name", "test2");
         input.put("id", oldId + 100);
 
-        Result result = routeAndCall(fakeRequest("PUT", "/api/persons/" + oldId).withJsonBody(input, "PUT"));
+        Result result = routeAndCall(fakeRequest(null, "/api/persons/" + oldId).withJsonBody(input, "PUT"));
         p.refresh();
 
-        assertThat(result).hasStatus(Http.Status.OK);
+        assertThat(result).hasStatus(Http.Status.OK)
+                          .hasJSONContent(p);
         assertThat(p.getId()).isEqualTo(oldId);
     }
 
@@ -186,7 +183,7 @@ public class PersonControllerInMemTest extends EbeanInMemoryTest {
         ObjectNode input = Json.newObject();
         input.put("name", "test");
 
-        Result result = routeAndCall(fakeRequest("PUT", "/api/persons/1").withJsonBody(input, "PUT"));
+        Result result = routeAndCall(fakeRequest(null, "/api/persons/1").withJsonBody(input, "PUT"));
 
         assertThat(result).hasStatus(Http.Status.NOT_FOUND)
                           .hasContentType(MediaType.JSON_UTF_8);

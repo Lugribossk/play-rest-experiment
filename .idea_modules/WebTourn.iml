@@ -70,6 +70,8 @@
     <orderEntry type="library" name="org.hamcrest_hamcrest-core_1.1" level="project" />
     <orderEntry type="library" name="org.objenesis_objenesis_1.0" level="project" />
     <orderEntry type="library" name="org.jooq_joor_0.9.3" level="project" />
+    <orderEntry type="library" name="org.projectlombok_lombok_0.11.2" level="project" />
+    <orderEntry type="library" name="org.mindrot_jbcrypt_0.3m" level="project" />
     <orderEntry type="library" scope="TEST" name="play_play-test_2.9.1_2.0.2_test" level="project" />
     <orderEntry type="library" scope="TEST" name="org.specs2_specs2_2.9.1_1.9_test" level="project" />
     <orderEntry type="library" scope="TEST" name="org.specs2_specs2-scalaz-core_2.9.1_6.0.1_test" level="project" />

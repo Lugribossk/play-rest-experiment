@@ -13,7 +13,9 @@ object ApplicationBuild extends Build {
       // Play with Guava 12 requires this newer version
       "org.reflections" % "reflections" % "0.9.8",
       "org.mockito" % "mockito-core" % "1.9.0",
-      "org.jooq" % "joor" % "0.9.3"
+      "org.jooq" % "joor" % "0.9.3",
+      "org.projectlombok" % "lombok" % "0.11.2",
+      "org.mindrot" % "jbcrypt" % "0.3m"
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(

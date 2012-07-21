@@ -4,8 +4,6 @@
       <root url="jar://C:/Play/play-2.0.2/repository/local/org.avaje/ebean/2.7.3/jars/ebean.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/project/sources/ebean-2.7.3-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
