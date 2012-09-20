@@ -1,6 +1,8 @@
 package controllers.api;
 
+import lombok.extern.slf4j.Slf4j;
 import models.person.Person;
+import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.annotation.Nullable;
@@ -10,24 +12,24 @@ import javax.annotation.Nullable;
  *
  * @author Bo Gotthardt
  */
-public class PersonController extends RestController {
-//    static {
-//        type = Person.class;
-//    }
+@Slf4j
+public class PersonController extends Controller {
+    private static final RestController controller = new RestController(Person.class);
+
 
     public static Result one(int id) {
-        return one(Person.class, id);
+        return controller.one(id);
     }
 
     public static Result many(@Nullable String searchQuery, int limit, int offset) {
-        return many(Person.class, searchQuery, limit, offset);
+        return controller.many(searchQuery, limit, offset);
     }
 
     public static Result create() {
-        return create(Person.class);
+        return controller.create();
     }
 
     public static Result update(int id) {
-        return update(Person.class, id);
+        return controller.update(id);
     }
 }
