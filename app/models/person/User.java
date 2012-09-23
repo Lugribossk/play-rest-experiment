@@ -25,23 +25,17 @@ import javax.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Slf4j
 public class User {
-    /**
-     * Database ID.
-     */
+    /** Database ID. */
     @Id
     private int id;
 
-    /**
-     * Username.
-     */
+    /** Username, must be unique. */
     @NotNull
     @NotEmpty
     @Column(unique = true)
     private String username;
 
-    /**
-     * Hashed password.
-     */
+    /** Hashed password. */
     @JsonIgnore
     @NotNull
     @Getter(AccessLevel.PRIVATE)
@@ -63,7 +57,7 @@ public class User {
      *
      * @param plaintext the new password in plaintext
      */
-    public void setPlaintextPassword(String plaintext) {
+    public void setPasswordFromPlaintext(String plaintext) {
         // Use a hashing algorithm designed for passwords.
         hashedPassword = BCrypt.hashpw(plaintext, BCrypt.gensalt());
     }

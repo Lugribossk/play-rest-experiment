@@ -26,27 +26,22 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Person extends Model {
-    // update(object, id) requires this to have a public setter
-    /**
-     * Database ID.
-     */
+    // Model.update(object, id) requires this to have a public setter
+    /** Database ID. */
     @Id
     private int id;
 
-    /**
-     * Full name.
-     */
+    /** Full name. */
     @NotNull
     @NotEmpty
     private String name;
 
-    /**
-     * Email address, possibly null.
-     */
+    /** Email address, possibly null. */
     @Nullable
     @Email
     private String email;
 
+    /** Tournament participations. */
     @NotNull
     @OneToMany
     private Set<Player> players = Sets.newHashSet();

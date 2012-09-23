@@ -22,6 +22,7 @@ import java.io.IOException;
 @Slf4j
 @RequiredArgsConstructor
 public class RestController extends JsonController {
+    /** The type of Model subclass that this controller works on. */
     private final Class<? extends Model> type;
 
     /**
@@ -154,7 +155,7 @@ public class RestController extends JsonController {
 
 
     /**
-     * Check whether an object of the specified type with the specified ID exists.
+     * Check whether an object with the specified ID exists.
      *
      * @param id the object ID
      * @return whether the object exists

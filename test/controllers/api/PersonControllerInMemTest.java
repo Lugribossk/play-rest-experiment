@@ -106,7 +106,8 @@ public class PersonControllerInMemTest extends EbeanInMemoryTest {
         int id = Json.parse(contentAsString(result)).get("id").asInt();
         Person p = Person.find.byId(id);
 
-        assertThat(result).hasStatus(Http.Status.OK);
+        assertThat(result).hasStatus(Http.Status.OK)
+                          .hasHeader(Http.HeaderNames.CACHE_CONTROL, "no-cache");
         assertThat(Person.find.all()).hasSize(1);
         assertThat(p).isNotNull();
         assertThat(p.getName()).isEqualTo("test");

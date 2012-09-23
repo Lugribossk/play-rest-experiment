@@ -1,5 +1,6 @@
 package controllers.api;
 
+import controllers.action.cache.NoCache;
 import lombok.extern.slf4j.Slf4j;
 import models.person.Person;
 import play.mvc.Controller;
@@ -25,10 +26,12 @@ public class PersonController extends Controller {
         return controller.many(searchQuery, limit, offset);
     }
 
+    @NoCache
     public static Result create() {
         return controller.create();
     }
 
+    @NoCache
     public static Result update(int id) {
         return controller.update(id);
     }

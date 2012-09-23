@@ -16,7 +16,7 @@ public class UserTest {
     @Test
     public void testPasswordCheck() {
         User user = new User("test");
-        user.setPlaintextPassword("mypass");
+        user.setPasswordFromPlaintext("mypass");
 
         assertThat(user.checkPassword("mypass")).isTrue();
     }
@@ -25,7 +25,7 @@ public class UserTest {
     @Test
     public void testPasswordNotJsonSerialized() {
         User user = new User("test");
-        user.setPlaintextPassword("mypass");
+        user.setPasswordFromPlaintext("mypass");
 
         JsonNode json = new ObjectMapper().valueToTree(user);
 
